@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'tw-animate-css';
+
+:root {
+  --background: #f0f4f8;
+  --foreground: #011f4b;
+  --card: #ffffff;
+  --card-foreground: #011f4b;
+  --popover: #ffffff;
+  --popover-foreground: #011f4b;
+  --primary: #005b96;
+  --primary-foreground: #ffffff;
+  --secondary: #b3cde0;
+  --secondary-foreground: #011f4b;
+  --muted: #f0f4f8;
+  --muted-foreground: #6497b1;
+  --accent: #6497b1;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #b3cde0;
+  --input: #b3cde0;
+  --ring: #005b96;
+  --chart-1: #005b96;
+  --chart-2: #03396c;
+  --chart-3: #6497b1;
+  --chart-4: #b3cde0;
+  --chart-5: #011f4b;
+  --radius: 0.625rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #011f4b;
+  --sidebar-primary: #005b96;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f0f4f8;
+  --sidebar-accent-foreground: #005b96;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #005b96;
+}
+
+.dark {
+  --background: #011f4b;
+  --foreground: #b3cde0;
+  --card: #03396c;
+  --card-foreground: #b3cde0;
+  --popover: #03396c;
+  --popover-foreground: #b3cde0;
+  --primary: #6497b1;
+  --primary-foreground: #011f4b;
+  --secondary: #005b96;
+  --secondary-foreground: #ffffff;
+  --muted: #03396c;
+  --muted-foreground: #b3cde0;
+  --accent: #005b96;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #03396c;
+  --input: #03396c;
+  --ring: #6497b1;
+  --chart-1: #6497b1;
+  --chart-2: #b3cde0;
+  --chart-3: #005b96;
+  --chart-4: #03396c;
+  --chart-5: #011f4b;
+  --sidebar: #011f4b;
+  --sidebar-foreground: #b3cde0;
+  --sidebar-primary: #6497b1;
+  --sidebar-primary-foreground: #011f4b;
+  --sidebar-accent: #03396c;
+  --sidebar-accent-foreground: #b3cde0;
+  --sidebar-border: #03396c;
+  --sidebar-ring: #6497b1;
+}
+
+
+@layer base {
+  * {
+    @apply border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

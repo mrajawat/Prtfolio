@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'tw-animate-css';
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+  --card: #f9f9f9;
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --primary: #B1361E;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f0f0;
+  --secondary-foreground: #111111;
+  --muted: #f0f0f0;
+  --muted-foreground: #666666;
+  --accent: #B1361E;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e0e0e0;
+  --input: #e0e0e0;
+  --ring: #B1361E;
+  --radius: 0rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #111111;
+  --sidebar-primary: #B1361E;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f0f0f0;
+  --sidebar-accent-foreground: #B1361E;
+  --sidebar-border: #e0e0e0;
+  --sidebar-ring: #B1361E;
+}
+
+.dark {
+  --background: #111111;
+  --background-solid: #111111;
+  --foreground: #eeeeee;
+  --card: #1a1a1a;
+  --card-foreground: #eeeeee;
+  --popover: #1a1a1a;
+  --popover-foreground: #eeeeee;
+  --primary: #B1361E;
+  --primary-foreground: #eeeeee;
+  --secondary: #222222;
+  --secondary-foreground: #eeeeee;
+  --muted: #1a1a1a;
+  --muted-foreground: #aaaaaa;
+  --accent: #B1361E;
+  --accent-foreground: #eeeeee;
+  --destructive: #ef4444;
+  --destructive-foreground: #eeeeee;
+  --border: #222222;
+  --input: #222222;
+  --ring: #B1361E;
+  --sidebar: #111111;
+  --sidebar-foreground: #eeeeee;
+  --sidebar-primary: #B1361E;
+  --sidebar-primary-foreground: #eeeeee;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #eeeeee;
+  --sidebar-border: #222222;
+  --sidebar-ring: #B1361E;
+}
+
+
+@layer base {
+  * {
+    @apply border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+  
+  body {
+    @apply text-foreground;
+    background: var(--background-solid, var(--background));
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .glass {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-hover {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    @apply transition-all duration-300;
+  }
+
+  .glass-border {
+    @apply border border-white/10;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-red-500 via-orange-500 to-red-600 bg-clip-text text-transparent;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .slide-in-up {
+    animation: slideInUp 0.7s ease-out forwards;
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 0.7s ease-out forwards;
+  }
+
+  .fade-in-scale {
+    animation: fadeInScale 0.6s ease-out forwards;
+  }
+
+  .float-animation {
+    animation: floatAnimation 6s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
